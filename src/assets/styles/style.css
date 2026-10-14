@@ -2,10 +2,88 @@
 @import "./fonts.css";
 @import "./utils.css";
 
-.test {
-    color: yellow !important;
+.text {
+    font-size: 16px;
+    line-height: 26px;
+    color: #1F3F68;
 }
 
-.test {
-    color: red !important;
+.title-1 {
+    font-size: 64px;
+    color: #1F3F68;
+}
+
+.title-2 {
+    font-weight: 500;
+    font-size: 44px;
+    text-align: center;
+}
+
+.title-3 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.title-4 {
+    font-size: 20px;
+    line-height: 30px;
+    color: #1F3F68;
+}
+
+.form {
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                      url("/static/img/form-bg.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.form label {
+    color: #FFFFFF;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #356EAD;
+    box-sizing: border-box;
+    border-radius: 10px;
+    opacity: 0.4;
+}
+
+.button {
+    padding: 18px 50px;
+    border: none;
+    background: linear-gradient(90deg, #4F75E4, #8658E4);
+    box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+    border-radius: 20px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.breadcrumbs {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: linear-gradient(#FEFEFE, #5F9195);
+}
+
+.breadcrumbs li {
+    padding: 12px 20px;
+    border-right: 2px solid #FFFFFF;
+    border-radius: 0 20px 20px 0;
+}
+
+.breadcrumbs a {
+    color: #000000;
+    text-decoration: none;
 }
