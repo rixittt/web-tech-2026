@@ -32,7 +32,7 @@
                 </div>
                 <a class="contact-line" href="mailto:itcompany@mail.com">
                     <img src="static/img/icon-mail.svg" alt="">
-                    itcompany@mail.com
+                    <span class="email-text">itcompany@mail.com</span>
                 </a>
             </div>
         </div>
@@ -52,8 +52,11 @@
                         your customers' devices.
                     </p>
                 </div>
-                <img class="hero-image" src="static/img/hero-mobile.webp"
-                    alt="Mobile application screens">
+                <picture class="hero-image">
+                    <source media="(max-width: 425px)" srcset="static/img/hero-mobile.webp">
+                    <source media="(max-width: 768px)" srcset="static/img/hero-tablet.webp">
+                    <img src="static/img/hero-desktop.webp" alt="Mobile application screens">
+                </picture>
                 <form class="consultation" id="consultation">
                     <h2>
                         Leave your contacts and we will call you back within
@@ -170,6 +173,10 @@
                 setMenu(false);
                 menuButton.focus();
             }
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) setMenu(false);
         });
     </script>
 </body>
