@@ -273,6 +273,7 @@ h1 span {
 }
 
 .services-list span {
+    display: inline-block;
     margin-left: 16px;
 }
 
