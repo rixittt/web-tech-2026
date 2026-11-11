@@ -223,3 +223,306 @@ h1 span {
     width: 30px;
     object-fit: contain;
 }
+
+.menu-button,
+.hero-image,
+.phone-group a + a img {
+    display: none;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding: 80px 0;
+}
+
+.services h2 {
+    margin: 0 0 28px;
+    font-size: 36px;
+}
+
+.services h3 {
+    margin: 24px 0 12px;
+    font-size: 20px;
+}
+
+.technologies {
+    max-width: 460px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.technologies span,
+.services-list span {
+    color: #2d66ee;
+}
+
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 20px;
+}
+
+.services-list span {
+    margin-left: 16px;
+}
+
+@media (max-width: 1440px) {
+    .header-content {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .navigation {
+        gap: 12px;
+    }
+
+    .hero {
+        min-height: 62.5vw;
+        background-size: 56.4% auto;
+    }
+
+    h1 {
+        font-size: 2.5vw;
+    }
+
+    .form-fields {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .form-fields label {
+        flex: 1 1 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 92%;
+    }
+
+    .header {
+        top: 16px;
+    }
+
+    .header-content {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        width: 98%;
+        min-height: 88px;
+        max-height: 90vh;
+        overflow: auto;
+    }
+
+    .logo {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .menu-button {
+        display: block;
+        justify-self: start;
+        padding: 0;
+        border: none;
+        color: #2d66ee;
+        background: transparent;
+        font-size: 40px;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    .navigation,
+    .phone-group {
+        display: none;
+    }
+
+    .header-contacts {
+        margin: 0;
+        justify-self: end;
+    }
+
+    .menu-open .menu-button {
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: end;
+    }
+
+    .menu-open .navigation,
+    .menu-open .header-contacts,
+    .menu-open .phone-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu-open .navigation,
+    .menu-open .header-contacts {
+        grid-column: 1 / -1;
+        justify-self: center;
+        padding: 24px 0;
+    }
+
+    .menu-open .navigation {
+        font-size: 22px;
+        gap: 24px;
+    }
+
+    .menu-open .phone-group a + a img {
+        display: block;
+    }
+
+    .hero {
+        min-height: 762px;
+        padding: 136px 0 32px;
+        background-image: url("static/img/hero-tablet.webp");
+        background-size: 52% auto;
+    }
+
+    .hero-text {
+        width: 53%;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .hero-text p {
+        margin-bottom: 32px;
+    }
+
+    .consultation {
+        width: 55%;
+        max-width: 384px;
+        padding: 4%;
+    }
+
+    .consultation h2 {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .form-fields {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+    }
+
+    .form-fields label {
+        flex: none;
+        width: 100%;
+        max-width: 224px;
+    }
+
+    .form-fields button {
+        width: auto;
+        min-height: 42px;
+    }
+
+    .services {
+        grid-template-columns: 3fr 2fr;
+        padding: 32px 0;
+    }
+
+    .services h2 {
+        font-size: 28px;
+    }
+
+    .technologies {
+        max-width: 280px;
+    }
+
+    .services-list {
+        padding-top: 120px;
+    }
+
+    .footer {
+        width: 100%;
+        padding: 32px;
+    }
+
+    .footer-contacts {
+        flex-wrap: wrap;
+    }
+
+    .footer-contacts > div {
+        flex: 1 1 136px;
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 425px) {
+    .container {
+        width: 89%;
+    }
+
+    .header-content {
+        width: 98%;
+        padding: 16px 12px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .header-contacts {
+        display: none;
+    }
+
+    .hero {
+        min-height: 0;
+        background-image: none;
+    }
+
+    .hero-text,
+    .consultation {
+        width: 100%;
+    }
+
+    .hero-text {
+        padding-left: 8px;
+    }
+
+    .hero-text p {
+        margin-bottom: 4px;
+    }
+
+    .hero-image {
+        display: block;
+        width: 106%;
+        height: 125vw;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .consultation {
+        position: relative;
+        margin-top: -4px;
+        padding: 32px;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .services-list {
+        padding-top: 0;
+    }
+
+    .technologies {
+        max-width: 100%;
+    }
+
+    .footer {
+        width: 100%;
+        min-height: 350px;
+        padding: 32px 24px;
+    }
+
+    .footer-contacts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 36px 24px;
+        font-size: 14px;
+    }
+}

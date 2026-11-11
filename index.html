@@ -9,9 +9,11 @@
 <body id="top">
     <header class="header">
         <div class="container header-content">
+            <button class="menu-button" type="button" aria-label="Navigation menu"
+                aria-controls="navigation" aria-expanded="false">☰</button>
             <a class="logo" href="#top">IT WEBSITE</a>
-            <nav class="navigation">
-                <a href="#top">Services</a>
+            <nav class="navigation" id="navigation">
+                <a href="#services">Services</a>
                 <a href="#top">Media</a>
                 <a href="#top">Cases</a>
                 <a href="#top">FAQ</a>
@@ -19,9 +21,14 @@
             </nav>
             <div class="header-contacts">
                 <div class="contact-line phone-group">
-                    <img src="static/img/icon-phone.svg" alt="">
-                    <a href="tel:+71111111111">+7 (111) 111 11 11</a>
-                    <a href="tel:+71111111111">+7 (111) 111 11 11</a>
+                    <a class="contact-line" href="tel:+71111111111">
+                        <img src="static/img/icon-phone.svg" alt="">
+                        +7 (111) 111 11 11
+                    </a>
+                    <a class="contact-line" href="tel:+71111111111">
+                        <img src="static/img/icon-phone.svg" alt="">
+                        +7 (111) 111 11 11
+                    </a>
                 </div>
                 <a class="contact-line" href="mailto:itcompany@mail.com">
                     <img src="static/img/icon-mail.svg" alt="">
@@ -45,6 +52,8 @@
                         your customers' devices.
                     </p>
                 </div>
+                <img class="hero-image" src="static/img/hero-mobile.webp"
+                    alt="Mobile application screens">
                 <form class="consultation" id="consultation">
                     <h2>
                         Leave your contacts and we will call you back within
@@ -65,6 +74,39 @@
                     </div>
                 </form>
             </div>
+        </section>
+        <section class="container services" id="services">
+            <div>
+                <h2>Full development cycle</h2>
+                <p>We use proven technologies.</p>
+                <h3>Web</h3>
+                <p class="technologies">
+                    PHP <span>/</span> JavaScript <span>/</span>
+                    Node.js <span>/</span> WebSocket <span>/</span>
+                    Socket.io <span>/</span> Vue.js <span>/</span>
+                    Nuxt <span>/</span> MySQL <span>/</span>
+                    Laravel <span>/</span> Go <span>/</span>
+                    Django <span>/</span> Python
+                </p>
+                <h3>Mobile</h3>
+                <p class="technologies">
+                    Swift <span>/</span> Kotlin <span>/</span>
+                    Alamofire <span>/</span> Firebase <span>/</span>
+                    CoreData <span>/</span> Room <span>/</span>
+                    Realm <span>/</span> Coroutine <span>/</span>
+                    RxJava <span>/</span> RxSwift <span>/</span>
+                    Unit Test <span>/</span> Navigation
+                </p>
+            </div>
+            <nav class="services-list">
+                <a href="#consultation">iOS development <span>›</span></a>
+                <a href="#consultation">Android development <span>›</span></a>
+                <a href="#consultation">Web development <span>›</span></a>
+                <a href="#consultation">UI/UX design <span>›</span></a>
+                <a href="#consultation">Testing <span>›</span></a>
+                <a href="#consultation">Launch <span>›</span></a>
+                <a href="#consultation">IT consulting <span>›</span></a>
+            </nav>
         </section>
     </main>
 
@@ -105,5 +147,30 @@
             We work throughout the world.
         </p>
     </footer>
+    <script>
+        const header = document.querySelector(".header");
+        const menuButton = document.querySelector(".menu-button");
+
+        function setMenu(isOpen) {
+            header.classList.toggle("menu-open", isOpen);
+            menuButton.setAttribute("aria-expanded", isOpen);
+            menuButton.textContent = isOpen ? "×" : "☰";
+        }
+
+        menuButton.onclick = () => {
+            setMenu(!header.classList.contains("menu-open"));
+        };
+
+        header.querySelectorAll("a").forEach(link => {
+            link.onclick = () => setMenu(false);
+        });
+
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape" && header.classList.contains("menu-open")) {
+                setMenu(false);
+                menuButton.focus();
+            }
+        });
+    </script>
 </body>
 </html>
