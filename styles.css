@@ -17,7 +17,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    margin: 0;
+    max-width: 1440px;
+    margin: 0 auto;
     color: #101828;
     font-family: Inter, Arial, sans-serif;
 }
@@ -40,84 +41,137 @@ a:hover {
 }
 
 .container {
-    width: 85%;
+    width: 89%;
     max-width: 1224px;
     margin: 0 auto;
 }
 
 .header {
     position: fixed;
-    top: 24px;
+    top: 16px;
     right: 0;
     left: 0;
     z-index: 10;
-    width: 85%;
-    max-width: 1224px;
+    width: 100%;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
-.header-content,
-.navigation,
-.header-contacts,
-.contact-line {
+.contact-line,
+.header-contacts {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 8px;
 }
 
 .header-content {
-    width: 100%;
-    max-width: 1124px;
-    margin: 0;
-    min-height: 56px;
-    padding: 16px 24px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    width: 98%;
+    max-width: none;
+    min-height: 88px;
+    max-height: 90vh;
+    overflow: auto;
+    padding: 16px 12px;
+    gap: 16px;
     border-radius: 12px;
     background: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-    gap: 16px 80px;
 }
 
 .logo {
+    grid-column: 2;
+    grid-row: 1;
     color: #2d66ee;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     white-space: nowrap;
 }
 
+.menu-button {
+    justify-self: start;
+    padding: 0;
+    border: none;
+    color: #2d66ee;
+    background: transparent;
+    font-size: 40px;
+    line-height: 1;
+    cursor: pointer;
+}
+
 .navigation,
-.header-contacts {
-    font-size: 14px;
+.header-contacts,
+.phone-group,
+.phone-group a + a img {
+    display: none;
 }
 
 .header-contacts {
-    margin-left: auto;
+    justify-self: end;
+    min-width: 0;
+    max-width: 100%;
     color: #2d66ee;
+    font-size: 14px;
     white-space: nowrap;
 }
 
-.contact-line {
-    gap: 8px;
+.header-contacts > a {
+    max-width: 100%;
+}
+
+.email-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .contact-line img {
+    flex-shrink: 0;
     width: 20px;
     height: 20px;
 }
 
+.menu-open .menu-button {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+}
+
+.menu-open .navigation,
+.menu-open .header-contacts,
+.menu-open .phone-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-open .navigation,
+.menu-open .header-contacts {
+    grid-column: 1 / -1;
+    justify-self: center;
+    padding: 24px 0;
+    gap: 24px;
+}
+
+.menu-open .navigation {
+    font-size: 22px;
+}
+
+.menu-open .phone-group a + a img {
+    display: block;
+}
+
 .hero {
     position: relative;
-    min-height: 900px;
-    padding: 160px 0 64px;
+    padding: 136px 0 32px;
     background: #f2f4f7;
 }
 
 .hero-image {
     display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 812px;
-    height: 100%;
+    width: 106%;
+    height: 125vw;
+    max-height: 530px;
     overflow: hidden;
 }
 
@@ -136,13 +190,13 @@ a:hover {
 }
 
 .hero-text {
-    width: 52%;
     max-width: 610px;
+    padding-left: 8px;
 }
 
 h1 {
     margin: 0;
-    font-size: 36px;
+    font-size: 24px;
     line-height: 1.45;
 }
 
@@ -151,14 +205,15 @@ h1 span {
 }
 
 .hero-text p {
-    margin: 24px 0 64px;
+    margin: 24px 0 4px;
     font-size: 15px;
     line-height: 1.4;
 }
 
 .consultation {
-    width: 56%;
+    width: 100%;
     max-width: 676px;
+    margin-top: -4px;
     padding: 24px;
     border-radius: 12px;
     background: #ffffff;
@@ -168,17 +223,20 @@ h1 span {
 .consultation h2 {
     max-width: 480px;
     margin: 0 0 32px;
-    font-size: 20px;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .form-fields {
     display: flex;
-    align-items: flex-end;
-    gap: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
 }
 
 .form-fields label {
-    flex: 1;
+    width: 100%;
+    max-width: 224px;
     min-width: 0;
     color: #475467;
     font-size: 13px;
@@ -200,8 +258,7 @@ h1 span {
 }
 
 .form-fields button {
-    width: 132px;
-    min-height: 58px;
+    min-height: 42px;
     padding: 10px 24px;
     border: none;
     border-radius: 8px;
@@ -214,8 +271,10 @@ h1 span {
 }
 
 .footer {
+    width: 100%;
+    min-height: 350px;
     margin-top: 48px;
-    padding: 24px;
+    padding: 32px 24px;
     border-radius: 12px;
     background: #101828;
     color: #ffffff;
@@ -228,14 +287,15 @@ h1 span {
 }
 
 .footer-contacts {
-    display: flex;
-    gap: 24px;
-    font-size: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 24px;
+    font-size: 14px;
     font-style: normal;
 }
 
 .footer-contacts > div {
-    flex: 1;
+    overflow-wrap: anywhere;
 }
 
 .footer-contacts p {
@@ -255,21 +315,16 @@ h1 span {
     object-fit: contain;
 }
 
-.menu-button,
-.phone-group a + a img {
-    display: none;
-}
-
 .services {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 32px;
-    padding: 80px 0;
+    padding: 32px 0;
 }
 
 .services h2 {
     margin: 0 0 28px;
-    font-size: 36px;
+    font-size: 28px;
 }
 
 .services h3 {
@@ -278,7 +333,6 @@ h1 span {
 }
 
 .technologies {
-    max-width: 460px;
     font-size: 14px;
     line-height: 1.6;
 }
@@ -313,173 +367,55 @@ h1 span {
     text-underline-offset: 5px;
 }
 
-@media (max-width: 1440px) {
-    [id] {
-        scroll-margin-top: 160px;
-    }
-
-    .header {
-        width: 92%;
-    }
-
-    .header-content {
-        gap: 8px 5.5vw;
-    }
-
-    .navigation {
-        gap: 1.67vw;
-    }
-
-    .header-contacts {
-        flex: 1;
-        min-width: 180px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        gap: 8px 12px;
-    }
-
-    .phone-group {
-        flex-wrap: wrap;
-        justify-content: flex-end;
-    }
-
-    .hero {
-        min-height: 62.5vw;
-    }
-
-    .hero-image {
-        width: 56.4%;
-    }
-
+@media (min-width: 425px) {
     h1 {
-        font-size: 2.5vw;
+        font-size: 28px;
     }
 
-    .form-fields {
-        flex-wrap: wrap;
-        gap: 16px;
+    .consultation {
+        padding: 32px;
     }
 
-    .form-fields label {
-        flex: 1 1 150px;
+    .footer {
+        padding: 32px 36px;
     }
 }
 
-@media (max-width: 768px) {
-    [id] {
-        scroll-margin-top: 120px;
-    }
-
+@media (min-width: 768px) {
     .container {
         width: 92%;
     }
 
-    .header {
-        top: 16px;
-        width: 100%;
-        max-width: none;
-    }
-
     .header-content {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
         width: 98%;
-        max-width: none;
-        margin: 0 auto;
-        gap: 16px;
-        min-height: 88px;
-        max-height: 90vh;
-        overflow: auto;
+        padding: 0 24px;
     }
 
     .logo {
-        grid-column: 2;
-        grid-row: 1;
-    }
-
-    .menu-button {
-        display: block;
-        justify-self: start;
-        padding: 0;
-        border: none;
-        color: #2d66ee;
-        background: transparent;
-        font-size: 40px;
-        line-height: 1;
-        cursor: pointer;
-    }
-
-    .navigation,
-    .phone-group {
-        display: none;
+        font-size: 20px;
     }
 
     .header-contacts {
-        flex: none;
-        min-width: 0;
-        max-width: 100%;
-        flex-wrap: nowrap;
-        margin: 0;
-        justify-self: end;
-    }
-
-    .header-contacts > a {
-        max-width: 100%;
-    }
-
-    .email-text {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .header-contacts img {
-        flex-shrink: 0;
-    }
-
-    .menu-open .menu-button {
-        grid-column: 3;
-        grid-row: 1;
-        justify-self: end;
-    }
-
-    .menu-open .navigation,
-    .menu-open .header-contacts,
-    .menu-open .phone-group {
         display: flex;
-        flex-direction: column;
-    }
-
-    .menu-open .navigation,
-    .menu-open .header-contacts {
-        grid-column: 1 / -1;
-        justify-self: center;
-        padding: 24px 0;
-    }
-
-    .menu-open .navigation {
-        font-size: 22px;
-        gap: 24px;
-    }
-
-    .menu-open .phone-group a + a img {
-        display: block;
     }
 
     .hero {
         min-height: 762px;
-        padding: 136px 0 32px;
     }
 
     .hero-image {
+        position: absolute;
+        top: 0;
+        right: 0;
         width: 52%;
+        height: 100%;
+        max-height: none;
     }
 
     .hero-text {
         width: 53%;
-    }
-
-    h1 {
-        font-size: 28px;
+        max-width: 400px;
+        padding-left: 0;
     }
 
     .hero-text p {
@@ -489,38 +425,12 @@ h1 span {
     .consultation {
         width: 55%;
         max-width: 384px;
+        margin-top: 0;
         padding: 4%;
-    }
-
-    .consultation h2 {
-        font-size: 16px;
-        line-height: 1.5;
-    }
-
-    .form-fields {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 28px;
-    }
-
-    .form-fields label {
-        flex: none;
-        width: 100%;
-        max-width: 224px;
-    }
-
-    .form-fields button {
-        width: auto;
-        min-height: 42px;
     }
 
     .services {
         grid-template-columns: 3fr 2fr;
-        padding: 32px 0;
-    }
-
-    .services h2 {
-        font-size: 28px;
     }
 
     .technologies {
@@ -532,89 +442,144 @@ h1 span {
     }
 
     .footer {
-        width: 100%;
+        min-height: 0;
         padding: 32px;
     }
 
     .footer-contacts {
+        display: flex;
         flex-wrap: wrap;
+        gap: 24px;
+        font-size: 15px;
     }
 
     .footer-contacts > div {
         flex: 1 1 136px;
-        overflow-wrap: anywhere;
     }
 }
 
-@media (max-width: 425px) {
+@media (min-width: 1440px) {
     .container {
-        width: 89%;
+        width: 85%;
+    }
+
+    .header {
+        top: 24px;
+        width: 85%;
+        max-width: 1224px;
     }
 
     .header-content {
-        width: 98%;
-        padding: 16px 12px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 1124px;
+        min-height: 56px;
+        max-height: none;
+        margin: 0;
+        padding: 16px 24px;
+        gap: 80px;
+        overflow: visible;
     }
 
-    .logo {
-        font-size: 18px;
-    }
-
-    .header-contacts {
+    .menu-button {
         display: none;
     }
 
+    .navigation,
+    .phone-group {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        white-space: nowrap;
+    }
+
+    .navigation {
+        font-size: 14px;
+    }
+
+    .phone-group {
+        gap: 8px;
+    }
+
+    .header-contacts {
+        margin-left: auto;
+        gap: 24px;
+    }
+
     .hero {
-        min-height: 0;
-    }
-
-    .hero-text,
-    .consultation {
-        width: 100%;
-    }
-
-    .hero-text {
-        padding-left: 8px;
-    }
-
-    .hero-text p {
-        margin-bottom: 4px;
+        min-height: 900px;
+        padding: 160px 0 64px;
     }
 
     .hero-image {
-        position: static;
-        width: 106%;
-        height: 125vw;
+        width: 812px;
+    }
+
+    .hero-text {
+        width: 52%;
+        max-width: 610px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    .hero-text p {
+        margin-bottom: 64px;
     }
 
     .consultation {
-        position: relative;
-        margin-top: -4px;
-        padding: 32px;
+        width: 56%;
+        max-width: 676px;
+        padding: 24px;
+    }
+
+    .consultation h2 {
+        font-size: 20px;
+        line-height: 1.25;
+    }
+
+    .form-fields {
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 24px;
+    }
+
+    .form-fields label {
+        flex: 1;
+        width: auto;
+        max-width: none;
+    }
+
+    .form-fields button {
+        width: 132px;
+        min-height: 58px;
     }
 
     .services {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        padding: 80px 0;
+    }
+
+    .services h2 {
+        font-size: 36px;
+    }
+
+    .technologies {
+        max-width: 460px;
     }
 
     .services-list {
         padding-top: 0;
     }
 
-    .technologies {
-        max-width: 100%;
-    }
-
     .footer {
-        width: 100%;
-        min-height: 350px;
-        padding: 32px 24px;
+        width: 85%;
+        padding: 24px;
     }
 
     .footer-contacts {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 36px 24px;
-        font-size: 14px;
+        flex-wrap: nowrap;
     }
 }

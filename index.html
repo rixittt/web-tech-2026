@@ -53,9 +53,9 @@
                     </p>
                 </div>
                 <picture class="hero-image">
-                    <source media="(max-width: 425px)" srcset="static/img/hero-mobile.webp">
-                    <source media="(max-width: 768px)" srcset="static/img/hero-tablet.webp">
-                    <img src="static/img/hero-desktop.webp" alt="Mobile application screens">
+                    <source media="(min-width: 1440px)" srcset="static/img/hero-desktop.webp">
+                    <source media="(min-width: 768px)" srcset="static/img/hero-tablet.webp">
+                    <img src="static/img/hero-mobile.webp" alt="Mobile application screens">
                 </picture>
                 <form class="consultation" id="consultation">
                     <h2>
@@ -176,7 +176,7 @@
         });
 
         window.addEventListener("resize", () => {
-            if (window.innerWidth > 768) setMenu(false);
+            if (window.innerWidth >= 1440) setMenu(false);
         });
     </script>
 </body>
