@@ -51,6 +51,9 @@ a:hover {
     right: 0;
     left: 0;
     z-index: 10;
+    width: 85%;
+    max-width: 1224px;
+    margin: 0 auto;
 }
 
 .header-content,
@@ -63,11 +66,15 @@ a:hover {
 }
 
 .header-content {
+    width: 100%;
+    max-width: 1124px;
+    margin: 0;
     min-height: 56px;
     padding: 16px 24px;
     border-radius: 12px;
     background: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    gap: 16px 80px;
 }
 
 .logo {
