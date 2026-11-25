@@ -52,11 +52,18 @@
                         your customers' devices.
                     </p>
                 </div>
-                <picture class="hero-image">
-                    <source media="(min-width: 1440px)" srcset="static/img/hero-desktop.webp">
-                    <source media="(min-width: 768px)" srcset="static/img/hero-tablet.webp">
-                    <img src="static/img/hero-mobile.webp" alt="Mobile application screens">
-                </picture>
+                <div class="hero-image" aria-hidden="true">
+                    <div class="hero-columns">
+                        <div class="hero-column">
+                            <img src="static/img/column-left.webp" width="485" height="1960" alt="">
+                            <img src="static/img/column-left.webp" width="485" height="1960" alt="">
+                        </div>
+                        <div class="hero-column hero-column-down">
+                            <img src="static/img/column-right.webp" width="293" height="1959" alt="">
+                            <img src="static/img/column-right.webp" width="293" height="1959" alt="">
+                        </div>
+                    </div>
+                </div>
                 <form class="consultation" id="consultation">
                     <h2>
                         Leave your contacts and we will call you back within

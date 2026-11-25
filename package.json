@@ -1,0 +1,10 @@
+{
+  "name": "web-tech-2026",
+  "private": true,
+  "scripts": {
+    "build": "sass --no-source-map styles.scss styles.css"
+  },
+  "devDependencies": {
+    "sass": "1.97.3"
+  }
+}
